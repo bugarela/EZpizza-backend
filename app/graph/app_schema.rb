@@ -1,4 +1,4 @@
 AppSchema = GraphQL::Schema.define(
-  query: RootQueryType,
+  query: Types::QueryType,
   # mutation: RootMutationType
 )
