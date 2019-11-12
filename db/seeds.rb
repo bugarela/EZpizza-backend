@@ -5,5 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Pedido.create(email: "aa@aa.com", endereco: "rua")
-Sabor.create(nome: "Calabresa", preco_adicional: 1.25, ingredientes: "Calabresa, mussarela e cebola")
+p = Pedido.create(email: "aa@aa.com", endereco: "rua")
+s = Sabor.create(nome: "Calabresa", preco_adicional: 1.25, ingredientes: "Calabresa, mussarela e cebola")
+p.update(sabores: [s])

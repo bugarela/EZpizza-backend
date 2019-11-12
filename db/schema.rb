@@ -10,16 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191111214303) do
+ActiveRecord::Schema.define(version: 20191112222325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bordas", force: :cascade do |t|
+    t.string "nome"
+    t.decimal "preco_adicional"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pedidos", force: :cascade do |t|
     t.string "email"
     t.string "endereco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "borda_id"
+    t.bigint "tamanho_id"
+    t.index ["borda_id"], name: "index_pedidos_on_borda_id"
+    t.index ["tamanho_id"], name: "index_pedidos_on_tamanho_id"
+  end
+
+  create_table "pedidos_sabores", force: :cascade do |t|
+    t.bigint "pedido_id"
+    t.bigint "sabor_id"
+    t.index ["pedido_id"], name: "index_pedidos_sabores_on_pedido_id"
+    t.index ["sabor_id"], name: "index_pedidos_sabores_on_sabor_id"
   end
 
   create_table "sabores", force: :cascade do |t|
@@ -30,32 +48,16 @@ ActiveRecord::Schema.define(version: 20191111214303) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sabors", force: :cascade do |t|
+  create_table "tamanhos", force: :cascade do |t|
     t.string "nome"
-    t.decimal "preco_adicional"
-    t.string "ingredientes"
+    t.decimal "preco"
+    t.integer "diametro"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "bio"
-    t.string "name"
-    t.integer "role"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
+  add_foreign_key "pedidos", "bordas"
+  add_foreign_key "pedidos", "tamanhos"
+  add_foreign_key "pedidos_sabores", "pedidos"
+  add_foreign_key "pedidos_sabores", "sabores"
 end

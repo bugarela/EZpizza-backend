@@ -1,6 +1,6 @@
 class CreateSabors < ActiveRecord::Migration[5.1]
   def change
-    create_table :sabors do |t|
+    create_table :sabores do |t|
       t.string :nome
       t.decimal :preco_adicional
       t.string :ingredientes
