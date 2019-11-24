@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "/graphql", to: "graphql#execute"
   # post "/graphql", to: "graphql#execute"
   resources :tamanhos
   resources :bordas

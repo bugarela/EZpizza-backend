@@ -41,7 +41,6 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.11)
     builder (3.2.3)
-    byebug (9.0.6)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -56,15 +55,15 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     erubi (1.6.1)
     execjs (2.7.0)
-    ffaker (2.6.0)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.3)
       rails
-    graphql (1.6.6)
+    graphql (1.9.15)
     i18n (0.8.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -120,6 +119,27 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+    rspec-core (3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-expectations (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.0)
     ruby_dep (1.5.0)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
@@ -161,17 +181,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   coffee-rails
   devise
-  ffaker
   graphiql-rails
-  graphql
+  graphql (~> 1.9)
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   puma (~> 3.7)
   rack-cors
   rails (~> 5.1.3)
+  rspec
+  rspec-rails
   sass-rails
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -179,4 +199,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.15.3
+   1.16.0

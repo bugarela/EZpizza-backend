@@ -1,4 +1,4 @@
-FROM ruby:2.4.2
+FROM ruby:latest
 MAINTAINER admin@ryancollins.io
 
 RUN apt-get update && apt-get install -y \ 

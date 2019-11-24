@@ -32,3 +32,30 @@ query {
   }
 }
 ```
+
+## Exemplo de mutação
+```
+mutation {
+  createPedido(
+    email: "comprador@exemplo.com",
+    endereco: "R: Beira Rio, nº 2000",
+    tamanho: 1,
+    sabores: [1, 2],
+    borda: 1
+  ) {
+    id
+    email
+    endereco
+    sabores {
+      nome
+      ingredientes
+    }
+    tamanho {
+      nome
+    }
+    borda {
+      nome
+    }
+  }
+}
+```
