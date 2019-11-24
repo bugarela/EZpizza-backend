@@ -3,7 +3,7 @@ class Borda < ApplicationRecord
     {
       id: id,
       nome: nome,
-      preco_adicional: preco_adicional
+      precoAdicional: preco_adicional
     }
   end
 end

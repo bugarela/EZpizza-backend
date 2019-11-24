@@ -5,7 +5,7 @@ class Tamanho < ApplicationRecord
       nome: nome,
       preco: preco,
       diametro: diametro,
-      max_sabores: max_sabores,
+      maxSabores: max_sabores,
     }
   end
 end

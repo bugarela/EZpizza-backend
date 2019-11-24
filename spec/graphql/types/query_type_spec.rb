@@ -90,7 +90,7 @@ RSpec.describe Types::QueryType, type: :request do
            sabores {
             id
             nome
-            preco_adicional
+            precoAdicional
             ingredientes
           }
         }
@@ -123,7 +123,7 @@ RSpec.describe Types::QueryType, type: :request do
             nome
             preco
             diametro
-            max_sabores
+            maxSabores
           }
         }
       GQL
@@ -153,7 +153,7 @@ RSpec.describe Types::QueryType, type: :request do
            bordas {
             id
             nome
-            preco_adicional
+            precoAdicional
           }
         }
       GQL

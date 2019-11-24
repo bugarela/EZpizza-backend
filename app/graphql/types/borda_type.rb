@@ -1,7 +1,5 @@
-Types::BordaType = GraphQL::ObjectType.define do
-  name 'Borda'
-
-  field :id, !types.Int
-  field :nome, !types.String
-  field :preco_adicional, !types.Float
+class Types::BordaType < GraphQL::Schema::Object
+  field :id, Int, null: false
+  field :nome, String, null: false
+  field :precoAdicional, Float, null: true
 end

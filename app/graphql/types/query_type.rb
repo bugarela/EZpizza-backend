@@ -7,7 +7,7 @@ module Types
     end
 
     field :pedido, Types::PedidoType, null: false do
-      argument :id, ID, required: true
+      argument :id, Int, required: true
     end
 
     def pedido(id:)
