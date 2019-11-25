@@ -7,7 +7,10 @@ app:
     - "3000:3000"
   links:
     - postgres
+  env_file:
+    - .env
+
 postgres:
   image: postgres:9.4
   ports:
-    - "5432"    
+    - "5432"

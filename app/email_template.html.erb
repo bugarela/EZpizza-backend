@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>Confirme seu pedido!</h1>
+        <p>
+            Confira o pedido: 1 pizza <%= @pedido.tamanho.nome %> com os sabores: <%= @pedido.sabores.pluck(:nome).join(', ')%><%= "; com borda recheada de #{@pedido.borda.nome}" if @pedido.borda %>
+            <br>
+            A ser entregue em <%= @pedido.endereco %><br>
+        </p>
+        <h3>Total: R$<%= @pedido.total %></h3>
+        <p>
+            Para confirmar o pedido, siga o link: <%= url %>.
+        </p>
+        <p>Obrigada por usar EZ-pizza!</p>
+    </body>
+</html>

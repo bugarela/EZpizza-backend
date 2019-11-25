@@ -13,6 +13,8 @@ gem 'rack-cors'
 gem 'graphql', '~> 1.9'
 gem 'graphiql-rails'
 gem 'devise'
+gem 'httparty'
+gem 'jwt'
 
 # Graphiql rails needs these
 gem 'sass-rails'
@@ -22,6 +24,7 @@ gem 'coffee-rails'
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :development do
