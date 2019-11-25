@@ -12,7 +12,6 @@ gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'graphql', '~> 1.9'
 gem 'graphiql-rails'
-gem 'devise'
 gem 'httparty'
 gem 'jwt'
 
