@@ -105,12 +105,14 @@ RSpec.describe Types::QueryType, type: :request do
       expect(data).to be_a(Array)
     end
 
-    it 'returns all sabores' do
+    it 'returns all sabores sorted by popularity' do
+      most_popular_sabor = Sabor.first
+
       post '/graphql', params: { query: query }
       json = JSON.parse(response.body)
       data = json['data']['sabores'].map(&:deep_symbolize_keys)
 
-      expect(data.first).to include(Sabor.first.to_h)
+      expect(data.first).to include(most_popular_sabor.to_h)
     end
   end
 

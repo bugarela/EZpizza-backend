@@ -12,8 +12,7 @@ class Mailer
     bind = binding
     bind.local_variable_set(:pedido, @pedido)
     bind.local_variable_set(:url, confirmation_url)
-    binding.pry
-    aedsf
+
     ERB.new(File.read(template)).result(bind)
   end
 

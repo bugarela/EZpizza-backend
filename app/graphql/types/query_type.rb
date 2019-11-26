@@ -17,7 +17,11 @@ module Types
     field :sabores, [Types::SaborType], null: false
 
     def sabores
-      Sabor.all
+      pedidos = Pedido.all
+
+      Sabor.all.sort_by do |sabor|
+        pedidos.count { |p| p.sabores.include?(sabor) }
+      end.reverse
     end
 
     field :tamanhos, [Types::TamanhoType], null: false

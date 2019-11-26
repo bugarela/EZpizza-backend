@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Sabor.create(nome: 'Calabresa', preco_adicional: 0, ingredientes: 'Molho de tomate, calabresa fatiada, cebola, orégano e azeitonas pretas.')
 Sabor.create(nome: '4 queijos', preco_adicional: 0, ingredientes: 'Molho de tomate, gorgonzola, catupiry, provolone, muzzarela especial, orégano e azeitonas pretas.')
-Sabor.create(nome: 'Peperoni', preco_adicional: 4.75, ingredientes: 'Molho de tomate, muzzarela especial, coberta com salame pepperone, iscas de pimentão, orégano e azeitonas pretas.')
+Sabor.create(nome: 'Pepperoni', preco_adicional: 4.75, ingredientes: 'Molho de tomate, muzzarela especial, coberta com salame pepperoni, iscas de pimentão, orégano e azeitonas pretas.')
 
 Tamanho.create(nome: 'Pequena', preco: 25.00, diametro: 30, max_sabores: 2)
 Tamanho.create(nome: 'Média', preco: 30.00, diametro: 35, max_sabores: 3)
@@ -23,4 +23,20 @@ Pedido.create(
   tamanho: Tamanho.first,
   sabores: Sabor.all.sample(2),
   borda: Borda.first
+)
+
+Pedido.create(
+  email: 'cliente2@exemplo.com',
+  endereco: 'R: João Colin, nº 4567 - Centro',
+  tamanho: Tamanho.first,
+  sabores: [Sabor.first ],
+  borda: Borda.first
+)
+
+Pedido.create(
+  email: 'cliente3@exemplo.com',
+  endereco: 'R: João Colin, nº 899 - Centro',
+  tamanho: Tamanho.last,
+  sabores: [Sabor.first ],
+  borda: Borda.last
 )
