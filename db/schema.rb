@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191124141326) do
+ActiveRecord::Schema.define(version: 20191126040059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20191124141326) do
     t.datetime "updated_at", null: false
     t.bigint "borda_id"
     t.bigint "tamanho_id"
+    t.boolean "confirmado"
     t.index ["borda_id"], name: "index_pedidos_on_borda_id"
     t.index ["tamanho_id"], name: "index_pedidos_on_tamanho_id"
   end

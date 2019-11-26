@@ -19,8 +19,9 @@ class Mailer
   private
 
   def confirmation_url
-    app_url = ENV['APP_URL']
+    app_url = ENV['BACKEND_URL']
     token = encode_token
+
 
     "#{app_url}/confirm?t=#{token}"
   end

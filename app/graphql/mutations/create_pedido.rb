@@ -15,6 +15,7 @@ module Mutations
         sabor_ids: sabores,
         tamanho_id: tamanho,
         borda_id: borda,
+        confirmado: false
       )
 
       SendgridClient.new.send_email(pedido) if pedido

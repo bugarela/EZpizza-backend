@@ -22,7 +22,8 @@ Pedido.create(
   endereco: 'R: João Colin, nº 1234 - Centro',
   tamanho: Tamanho.first,
   sabores: Sabor.all.sample(2),
-  borda: Borda.first
+  borda: Borda.first,
+  confirmado: false
 )
 
 Pedido.create(
@@ -30,7 +31,8 @@ Pedido.create(
   endereco: 'R: João Colin, nº 4567 - Centro',
   tamanho: Tamanho.first,
   sabores: [Sabor.first],
-  borda: Borda.first
+  borda: Borda.first,
+  confirmado: false
 )
 
 Pedido.create(
@@ -38,5 +40,6 @@ Pedido.create(
   endereco: 'R: João Colin, nº 899 - Centro',
   tamanho: Tamanho.last,
   sabores: [Sabor.first],
-  borda: Borda.last
+  borda: Borda.last,
+  confirmado: false
 )
