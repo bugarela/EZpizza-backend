@@ -9,13 +9,17 @@ module Mutations
     type Types::PedidoType
 
     def resolve(email:, endereco:, sabores:, tamanho:, borda:)
-      Pedido.create!(
+      pedido = Pedido.create!(
         email: email,
         endereco: endereco,
         sabor_ids: sabores,
         tamanho_id: tamanho,
         borda_id: borda,
       )
+
+      SendgridClient.new.send_email(pedido) if pedido
+
+      pedido
     end
   end
 end

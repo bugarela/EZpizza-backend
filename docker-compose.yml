@@ -11,5 +11,7 @@ services:
    - .:/app
   ports:
    - "3456:3456"
+  env_file:
+  - .env
   depends_on:
    - db
