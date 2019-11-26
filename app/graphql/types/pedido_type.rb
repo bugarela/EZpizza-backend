@@ -5,6 +5,7 @@ class Types::PedidoType < GraphQL::Schema::Object
   field :sabores, [Types::SaborType], null: false
   field :tamanho, Types::TamanhoType, null: false
   field :borda, Types::BordaType, null: false
+  field :confirmado, Boolean, null: false
 
   def tamanho
     object.tamanho

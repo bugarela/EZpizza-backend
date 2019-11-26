@@ -6,7 +6,7 @@
     <body>
         <h1>Confirme seu pedido!</h1>
         <p>
-            Confira o pedido: 1 pizza <%= @pedido.tamanho.nome %> com os sabores: <%= @pedido.sabores.pluck(:nome).join(', ')%><%= "; com borda recheada de #{@pedido.borda.nome}" if @pedido.borda %>
+            Confira o pedido: 1 pizza <%= @pedido.tamanho.nome %> com os sabores: <%= @pedido.sabores.pluck(:nome).join(', ')%><%= "; com borda recheada de #{@pedido.borda.nome}" unless @pedido.borda.id.zero? %>
             <br>
             A ser entregue em <%= @pedido.endereco %><br>
         </p>
