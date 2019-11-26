@@ -29,7 +29,7 @@ Pedido.create(
   email: 'cliente2@exemplo.com',
   endereco: 'R: João Colin, nº 4567 - Centro',
   tamanho: Tamanho.first,
-  sabores: [Sabor.first ],
+  sabores: [Sabor.first],
   borda: Borda.first
 )
 
@@ -37,6 +37,6 @@ Pedido.create(
   email: 'cliente3@exemplo.com',
   endereco: 'R: João Colin, nº 899 - Centro',
   tamanho: Tamanho.last,
-  sabores: [Sabor.first ],
+  sabores: [Sabor.first],
   borda: Borda.last
 )

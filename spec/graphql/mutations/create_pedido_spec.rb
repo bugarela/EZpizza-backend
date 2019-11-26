@@ -32,6 +32,24 @@ RSpec.describe Mutations::CreatePedido, type: :request do
         borda: { nome: 'Cheddar' },
       )
     end
+
+    context 'when there are too many sabores' do
+      let(:params) do
+      <<~GQL
+        email: "comprador@exemplo.com",
+        endereco: "R: Beira Rio, nº 2000",
+        tamanho: 1,
+        sabores: [1, 2, 3],
+        borda: 1
+      GQL
+      end
+
+      it 'responds with bad request' do
+        post '/graphql', params: { query: query }
+
+        expect(response.code).to eq('400')
+      end
+    end
   end
 
   let(:query) do

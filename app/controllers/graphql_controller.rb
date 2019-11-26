@@ -14,6 +14,8 @@ class GraphqlController < ApplicationController
     }
     result = RailsGraphqlApiSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
+  rescue ActiveRecord::RecordInvalid => e
+    render json: { error: { message: e.message }, data: {} }, status: 400
   rescue => e
     raise e unless Rails.env.development?
     handle_error_in_development e
