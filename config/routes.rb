@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
-  # post "/graphql", to: "graphql#execute"
+
   resources :tamanhos
   resources :bordas
   resources :sabors
@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   root to: redirect('/graphiql')
   resources :graphql
 
+  match '*all', controller: 'application', action: 'cors_preflight_check', via: [:options]
 end
